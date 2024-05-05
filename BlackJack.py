@@ -162,15 +162,17 @@ def main():
         text_surface, rect = GAME_FONT.render(("Dealer's Total card Sum: " + str(check_for_Sum(dealers_cards, True))), pygame.Color('white'))
         screen.blit(text_surface, (23, 230))
         
-        text_surface, rect = GAME_FONT.render(("Games Won by "  + name + ": " + str(gamesWon)), pygame.Color('white'))
-        screen.blit(text_surface, (23, 470))
+        text_surface, rect = GAME_FONT.render(("Games Won by "  + name + ": " + str(gamesWon)), pygame.Color('blue'))
+        screen.blit(text_surface, (23, 665))#470
         
-        text_surface, rect = GAME_FONT.render(("Games Lost: " + str(gamesLost)), pygame.Color('white'))
-        screen.blit(text_surface, (23, 510))
+        text_surface, rect = GAME_FONT.render(("Games Lost: " + str(gamesLost)), (242, 235, 24), bgcolor = 'black')# this is rgb color 
+        screen.blit(text_surface, (23, 705))#510
         
         text_surface, rect = GAME_FONT.render(("Number of Rounds: " + str(gamesPlayed)), (232, 75, 61))
-        screen.blit(text_surface, (23, 550))
+        screen.blit(text_surface, (23, 745))#550
         
+        
+            
 
 
             
@@ -209,7 +211,7 @@ def main():
                 showing how is IA doing in learning the status
                 in Monte Carlo Method of reinforcement learning 
                 '''
-                if gamesPlayed in [5, 50, 1000, 5000, 10000, 50000, 100000, 150000, 200000, 250000, 500000, 1000000] :
+                if gamesPlayed in [50000, 500000, 10000000, 5000000, 10000000, 5000000, 100000, 150000, 200000, 250000, 500000, 1000000] :
                     plot_blackjack_values(dict((k,np.max(v)) for k, v in Q.items()), gamesPlayed, gamesWon, gamesLost )
                    
             delay_between_the_game += 1
